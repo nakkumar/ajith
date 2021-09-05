@@ -4,9 +4,9 @@
 sudo apt-get update -y
 echo "y" | sudo ufw enable
 sudo ufw allow 22
-sudo ufw allow 3306
-sudo ufw allow 8080
-apt install -y mysql-server
+sudo ufw allow 3306   # .sdvcn,dv,dvd
+sudo ufw allow 8080   #lkdjvdkmnvhjn djhv
+apt install -y mysql-server   # dvkmlkdhvk nd
 systemctl enable --now mysql
 apt install -y expect
 mysqladmin --user=root password "zippyops"
