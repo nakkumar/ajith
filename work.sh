@@ -9,3 +9,12 @@ sudo ufw allow 8080
 apt install -y mysql-server
 systemctl enable --now mysql
 apt install -y expect
+mysqladmin --user=root password "zippyops"
+MYSQL_ROOT_PASSWORD='root'
+SECURE_MYSQL=$(expect -c "
+set timeout 10
+spawn mysql_secure_installation
+expect \"New password:\"
+send \"$MYSQL_ROOT_PASSWORD\r\"
+expect \"Re-enter new password:\"
+send \"$MYSQL_ROOT_PASSWORD\r\"
